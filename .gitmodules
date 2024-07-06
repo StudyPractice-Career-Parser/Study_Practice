@@ -1,0 +1,9 @@
+[submodule "Habr.Career_Parser"]
+	path = Habr.Career_Parser
+	url = https://github.com/StudyPractice-Career-Parser/Habr.Career_Parser.git
+[submodule "TGBot.Career"]
+	path = TGBot.Career
+	url = https://github.com/StudyPractice-Career-Parser/TGBot.Career
+[submodule "Main-Server"]
+	path = Main-Server
+	url = https://github.com/StudyPractice-Career-Parser/Main-Server

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  tg-bot:
+    build: ./TGBot.Career/
+    command: ./main
+    enviroment:
+      - TOKEN={TOKEN}
+  
+  main-server:
+    build: ./Main-Server/
+    command: ./main
+    ports:
+      - 8000:8000
+    depends_on:
+      - habr-parser
+  
+  habr-parser:
+    build: ./Habr.Career_Parser/
+    command: ./main
+    ports:
+      - 8001:8001
+    depends_on:
+      - db
+  
+  db:
+    restart: always
+    build: ./Postgres
+    ports:
+      - 5436:5432
+    enviroment:
+      - POSTGRES_USER={DB_USER}
+      - POSTGRES_PASSWORD={DB_PASSWORD}
+      - POSTGRES_HOST={DB_HOST}
+      - POSTGRES_PORT={DB_PORT}
+      - POSTGRES_DB={DB_NAME}
+    
