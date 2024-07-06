@@ -4,7 +4,7 @@ services:
   tg-bot:
     build: ./TGBot.Career/
     command: ./main
-    enviroment:
+    environment:
       - TOKEN={TOKEN}
   
   main-server:
@@ -28,7 +28,7 @@ services:
     build: ./Postgres
     ports:
       - 5436:5432
-    enviroment:
+    environment:
       - POSTGRES_USER={DB_USER}
       - POSTGRES_PASSWORD={DB_PASSWORD}
       - POSTGRES_HOST={DB_HOST}
